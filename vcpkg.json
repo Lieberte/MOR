@@ -1,0 +1,11 @@
+{
+  "$schema": "https://raw.githubusercontent.com/microsoft/vcpkg-tool/main/docs/vcpkg.schema.json",
+  "name": "mor",
+  "version": "1.0.0",
+  "description": "C++ based Model Order Reduction framework",
+  "dependencies": [
+    "mpi",
+    "eigen3"
+  ]
+}
+
