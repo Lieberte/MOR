@@ -1,0 +1,35 @@
+CompileFlags:
+  Add:
+    - -std=c++17
+    - -D_DEBUG
+    - -DUNICODE
+    - -D_UNICODE
+    - -D_CRT_SECURE_NO_WARNINGS
+    - -DMPI_VERSION=2
+    - -I.
+    - -I./core/include
+    - -I./core/include/framework/core
+    - -I./build/vcpkg_installed/x64-windows/include
+    - -I./build/vcpkg_installed/x64-windows/debug/include
+    - -I./build/vcpkg_installed/x64-windows/include/Eigen
+    - -fms-compatibility
+    - -fms-extensions
+    - -Wno-microsoft-template
+    - -Wno-unknown-pragmas
+  Remove:
+    - -W*
+    - -w
+Diagnostics:
+  ClangTidy:
+    Add:
+      - modernize-*
+      - performance-*
+      - readability-*
+    Remove:
+      - modernize-use-trailing-return-type
+      - readability-identifier-length
+  UnusedIncludes: Strict
+  MissingIncludes: Strict
+Index:
+  Background: Build
+

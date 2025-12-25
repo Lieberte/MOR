@@ -1,0 +1,33 @@
+{
+    "cmake.configureOnOpen": true,
+    "cmake.buildDirectory": "${workspaceFolder}/build",
+    "cmake.generator": "Visual Studio 16 2019",
+    "cmake.configureSettings": {
+        "CMAKE_EXPORT_COMPILE_COMMANDS": "ON"
+    },
+    "cmake.preferredGenerators": [
+        "Visual Studio 16 2019"
+    ],
+    "cmake.autoSelectActiveFolder": true,
+    "cmake.configureOnEdit": false,
+    "cmake.buildBeforeRun": true,
+    "cmake.intelliSenseEngine": "default",
+    "files.associations": {
+        "*.hpp": "cpp",
+        "*.h": "cpp"
+    },
+    "clangd.arguments": [
+        "--background-index",
+        "--clang-tidy",
+        "--completion-style=detailed",
+        "--header-insertion=iwyu",
+        "--pch-storage=memory"
+    ],
+    "clangd.path": "",
+    "clangd.fallbackFlags": [
+        "-std=c++17"
+    ],
+    "clangd.onConfigChanged": "restart",
+    "editor.semanticHighlighting.enabled": true
+}
+

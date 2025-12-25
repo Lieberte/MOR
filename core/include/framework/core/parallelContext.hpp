@@ -1,23 +1,23 @@
 # ifndef included_ParallelContext_h
 # define included_ParallelContext_h
 
-# include"mpi.h"
-# include<vector>
+#include "mpi.h"
+#include <vector>
 
-namespace shonClooud { namespace shonTA { namespace rom { namespace framework { namespace core {
+namespace shonClooud::shonTA::rom::framework::core {
 
-class ParallelContext
+class parallelContext
 {
 public:
-    ParallelContext(MPI_Comm comm = MPI_COMM_WORLD);
-    ~ParallelContext();
+    parallelContext(MPI_Comm comm = MPI_COMM_WORLD);
+    ~parallelContext();
 
-    int getRank() const { return d_rank; }
-    int getSize() const { return d_size; }
-    MPI_Comm getComm() const { return d_comm; }
+    int getRank() const { return dRank; }
+    int getSize() const { return dSize; }
+    MPI_Comm getComm() const { return dComm; }
 
-    int splitDimension(int global_dim) const;
-    void getGlobalOffsets(int local_dim, std::vector<int>& offsets) const;
+    int splitDimension(int globalDim) const;
+    void getGlobalOffsets(int localDim, std::vector<int>& offsets) const;
 
     void allReduce(double* data, int count, MPI_Op op) const;
     void allGather(const void* sendbuf, void* recvbuf, int count,
@@ -26,12 +26,12 @@ public:
     void barrier() const;
 
 private:
-    MPI_Comm d_comm;
-    int d_rank;
-    int d_size;
-    bool d_owns_comm;
+    MPI_Comm dComm;
+    int dRank;
+    int dSize;
+    bool dOwnsComm;
 };
 
-} } } } }
+}
 
 #endif
